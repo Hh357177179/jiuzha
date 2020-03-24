@@ -22,9 +22,14 @@ const routes = [
         component: () => import('../views/Me/Me.vue'),
         children: [
           {
-          path: '/home',
-          name: 'Home',
-          component: () => import ('../views/Home/home.vue')
+            path: '/home',
+            name: 'Home',
+            component: () => import ('../views/Home/home.vue')
+          },
+          {
+            path: '/question',
+            name: 'question',
+            component: () => import ('../views/question/question.vue')
           }
         ]
       }

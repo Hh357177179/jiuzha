@@ -1,6 +1,6 @@
 <template>
   <div class="sidebar">
-    <div class="sidebar_list" @click="clickNav">
+    <div class="sidebar_list" @click="clickNav('/home')">
       <div class="sider_icon">
         <img src="../assets/image/sidebar/home.png" alt="">
       </div>
@@ -12,7 +12,7 @@
       </div>
       <div class="sider_title">PTE Guide</div>
     </div>
-    <div class="sidebar_list" @click="clickNav">
+    <div class="sidebar_list" @click="clickNav('/question')">
       <div class="sider_icon">
         <img src="../assets/image/sidebar/prediction.png" alt="">
       </div>
@@ -75,8 +75,10 @@ export default {
     return {}
   },
   methods: {
-    clickNav() {
-
+    clickNav(route) {
+      if (route) {
+        this.$router.push(route)
+      }
     }
   }
 }

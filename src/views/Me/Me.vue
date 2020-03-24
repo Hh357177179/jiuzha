@@ -10,7 +10,7 @@
             <router-view></router-view>
           </div>
       </div>
-      <div style="width: 20%;margin-right: 15px;">
+      <div v-if="isShow" style="width: 20%;margin-right: 15px;">
         <div class="me_right">
           <div class="mr_title">My date</div>
           <div class="mr_list">
@@ -58,9 +58,20 @@ import SideBar from '../../components/Sidebar'
 import Head from '../../components/Head'
 export default {
   data () {
-    return {}
+    return {
+      isShow: true
+    }
   },
-  components: { Head, SideBar, Footer }
+  components: { Head, SideBar, Footer },
+  watch: {
+    $route(to,from){
+      if (to.path == '/question') {
+        this.isShow = false
+      } else {
+        this.isShow = true
+      }
+    }
+  }
 }
 </script>
 
@@ -76,7 +87,7 @@ export default {
     }
     .main{
       width: 100%;
-      height: calc(100vh - 100px);
+      // height: calc(100vh - 100px);
       margin: 0 15px 0;
       border-radius: 2px;
       .el-scrollbar__wrap {
