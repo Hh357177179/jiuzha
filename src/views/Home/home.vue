@@ -3,7 +3,7 @@
     <div class="home_banner">
       <div class="big_title">JIUCHAPTE</div>
       <div class="small_title">
-        <p>New platform</p>
+        <p>New platform123456</p>
         <p>New experience</p>
       </div>
     </div>
