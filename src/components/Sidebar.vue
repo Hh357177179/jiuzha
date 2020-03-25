@@ -1,70 +1,8 @@
 <template>
   <div class="sidebar">
-    <div class="sidebar_list" @click="clickNav('/home')">
-      <div class="sider_icon">
-        <img src="../assets/image/sidebar/home.png" alt="">
-      </div>
-      <div class="sider_title">Home</div>
-    </div>
-    <div class="sidebar_list" @click="clickNav">
-      <div class="sider_icon">
-        <img src="../assets/image/sidebar/pte.png" alt="">
-      </div>
-      <div class="sider_title">PTE Guide</div>
-    </div>
-    <div class="sidebar_list" @click="clickNav('/question')">
-      <div class="sider_icon">
-        <img src="../assets/image/sidebar/prediction.png" alt="">
-      </div>
-      <div class="sider_title">PTE Exam Questions</div>
-    </div>
-    <div class="sidebar_list" @click="clickNav">
-      <div class="sider_icon">
-        <img src="../assets/image/sidebar/exercise.png" alt="">
-      </div>
-      <div class="sider_title">Prediction Practice</div>
-    </div>
-    <div class="sidebar_list" @click="clickNav">
-      <div class="sider_icon">
-        <img src="../assets/image/sidebar/data.png" alt="">
-      </div>
-      <div class="sider_title">Data Statistics</div>
-    </div>
-    <div class="sidebar_list" @click="clickNav">
-      <div class="sider_icon">
-        <img src="../assets/image/sidebar/message.png" alt="">
-      </div>
-      <div class="sider_title">Notifications</div>
-    </div>
-    <div class="sidebar_list" @click="clickNav">
-      <div class="sider_icon">
-        <img src="../assets/image/sidebar/pdf.png" alt="">
-      </div>
-      <div class="sider_title">Export PDF</div>
-    </div>
-    <div class="sidebar_list" @click="clickNav">
-      <div class="sider_icon">
-        <img src="../assets/image/sidebar/high.png" alt="">
-      </div>
-      <div class="sider_title">Frequent Words </div>
-    </div>
-    <div class="sidebar_list" @click="clickNav">
-      <div class="sider_icon">
-        <img src="../assets/image/sidebar/circle.png" alt="">
-      </div>
-      <div class="sider_title">Community</div>
-    </div>
-    <div class="sidebar_list" @click="clickNav">
-      <div class="sider_icon">
-        <img src="../assets/image/sidebar/us.png" alt="">
-      </div>
-      <div class="sider_title">About Us</div>
-    </div>
-    <div class="sidebar_list" @click="clickNav">
-      <div class="sider_icon">
-        <img src="../assets/image/sidebar/share.png" alt="">
-      </div>
-      <div class="sider_title">Share</div>
+    <div v-for="(n, index) in navList" :key="index" :to="n.link" class="sidebar_list" :class="activiteIndex == index ? 'acvite' : ''" @click="clickNav(n,index)">
+      <img class="sider_icon" :src="activiteIndex == index ? n.activeLogo : n.logo" alt="">
+      <div class="sider_title" :style="activiteIndex == index ? 'color:#fff' : ''">{{n.text}}</div>
     </div>
   </div>
 </template>
@@ -72,12 +10,83 @@
 <script>
 export default {
   data () {
-    return {}
+    return {
+      activiteIndex: 0,
+      navList: [
+        {
+          logo: require('../assets/image/sidebar/home.png'),
+          activeLogo: require('../assets/image/sidebar/homea.png'),
+          text: 'Home',
+          link: '/home'
+        },
+        {
+          logo: require('../assets/image/sidebar/pte.png'),
+          activeLogo: require('../assets/image/sidebar/ptea.png'),
+          text: 'TE Guide',
+          link: ''
+        },
+        {
+          logo: require('../assets/image/sidebar/prediction.png'),
+          activeLogo: require('../assets/image/sidebar/predictiona.png'),
+          text: 'PTE Exam Questions',
+          link: '/question'
+        },
+        {
+          logo: require('../assets/image/sidebar/exercise.png'),
+          activeLogo: require('../assets/image/sidebar/exercisea.png'),
+          text: 'Prediction Practice',
+          link: ''
+        },
+        {
+          logo: require('../assets/image/sidebar/data.png'),
+          activeLogo: require('../assets/image/sidebar/dataa.png'),
+          text: 'Data Statistics',
+          link: ''
+        },
+        {
+          logo: require('../assets/image/sidebar/message.png'),
+          activeLogo: require('../assets/image/sidebar/messagea.png'),
+          text: 'Notifications',
+          link: ''
+        },
+        {
+          logo: require('../assets/image/sidebar/pdf.png'),
+          activeLogo: require('../assets/image/sidebar/pdfa.png'),
+          text: 'Export PDF',
+          link: ''
+        },
+        {
+          logo: require('../assets/image/sidebar/high.png'),
+          activeLogo: require('../assets/image/sidebar/higha.png'),
+          text: 'Frequent Words',
+          link: ''
+        },
+        {
+          logo: require('../assets/image/sidebar/circle.png'),
+          activeLogo: require('../assets/image/sidebar/circlea.png'),
+          text: 'Community',
+          link: ''
+        },
+        {
+          logo: require('../assets/image/sidebar/us.png'),
+          activeLogo: require('../assets/image/sidebar/usa.png'),
+          text: 'About Us',
+          link: ''
+        },
+        {
+          logo: require('../assets/image/sidebar/share.png'),
+          activeLogo: require('../assets/image/sidebar/sharea.png'),
+          text: 'Share',
+          link: ''
+        }
+      ]
+    }
   },
   methods: {
-    clickNav(route) {
-      if (route) {
-        this.$router.push(route)
+    clickNav(n, index) {
+      this.activiteIndex = index
+      if (n.link) {
+        this.$router.push(n.link)
       }
     }
   }
@@ -96,6 +105,9 @@ export default {
     color: #222941;
     font-weight: bold;
     border-radius: 4px;
+    .acvite{
+      background-color: #FF5A00;
+    }
     .sidebar_list{
       display: flex;
       justify-content: flex-start;
@@ -107,10 +119,10 @@ export default {
         height: 20px;
         margin-right: 10px;
         margin-left: 15px;
-        img{
-          width: 100%;
-          height: 100%;
-        }
+        // img{
+        //   width: 100%;
+        //   height: 100%;
+        // }
       }
       .sider_title{
         color: #222941;

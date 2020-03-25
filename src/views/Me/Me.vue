@@ -2,7 +2,8 @@
   <div class="me">
     <Head></Head>
     <div class="me_main">
-      <div style="width: 20%;margin-right: 15px;">
+      <!-- <div style="width: 20%;margin-right: 15px;"> -->
+      <div style="margin-right: 15px; flex-shrink: 0;">
         <SideBar></SideBar>
       </div>
       <div class="main">
@@ -75,7 +76,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="less" scoped>
   .me{
     width: 100%;
     min-height: 100vh;
