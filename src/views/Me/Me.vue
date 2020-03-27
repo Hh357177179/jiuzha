@@ -66,10 +66,10 @@ export default {
   components: { Head, SideBar, Footer },
   watch: {
     $route(to,from){
-      if (to.path == '/question') {
-        this.isShow = false
-      } else {
+      if (to.path == '/home' || to.path == '/statistics' || to.path == '/exportpdf') {
         this.isShow = true
+      } else {
+        this.isShow = false
       }
     }
   }

@@ -30,6 +30,21 @@ const routes = [
             path: '/question',
             name: 'question',
             component: () => import ('../views/question/question.vue')
+          },
+          {
+            path: '/practice',
+            name: 'practice',
+            component: () => import ('../views/practice/practice.vue')
+          },
+          {
+            path: '/statistics',
+            name: 'statistics',
+            component: () => import ('../views/statistics/statistics.vue')
+          },
+          {
+            path: '/exportpdf',
+            name: 'exportpdf',
+            component: () => import ('../views/exportpdf/exportpdf')
           }
         ]
       }

@@ -35,13 +35,13 @@ export default {
           logo: require('../assets/image/sidebar/exercise.png'),
           activeLogo: require('../assets/image/sidebar/exercisea.png'),
           text: 'Prediction Practice',
-          link: ''
+          link: '/practice'
         },
         {
           logo: require('../assets/image/sidebar/data.png'),
           activeLogo: require('../assets/image/sidebar/dataa.png'),
           text: 'Data Statistics',
-          link: ''
+          link: '/statistics'
         },
         {
           logo: require('../assets/image/sidebar/message.png'),
@@ -53,7 +53,7 @@ export default {
           logo: require('../assets/image/sidebar/pdf.png'),
           activeLogo: require('../assets/image/sidebar/pdfa.png'),
           text: 'Export PDF',
-          link: ''
+          link: '/exportpdf'
         },
         {
           logo: require('../assets/image/sidebar/high.png'),
