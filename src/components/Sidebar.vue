@@ -11,7 +11,7 @@
 export default {
   data () {
     return {
-      activiteIndex: 0,
+      activiteIndex: '',
       navList: [
         {
           logo: require('../assets/image/sidebar/home.png'),
@@ -82,7 +82,46 @@ export default {
       ]
     }
   },
+  watch: {
+    $route(to, from) {
+      const path = to.path
+      this.activiteIndex = ''
+      switch (path) {
+        case '/home':
+          this.activiteIndex = 0
+          break
+        case '/question':
+          this.activiteIndex = 2
+          break
+        case '/practice':
+          this.activiteIndex = 3
+          break
+        case '/statistics':
+          this.activiteIndex = 4
+          break
+        case '/exportpdf':
+          this.activiteIndex = 6
+          break
+      }
+    }
+  },
+  mounted() {
+    this.init()
+  },
   methods: {
+    init() {
+      if (this.$route.path == '/') {
+        this.activiteIndex = 0
+      } else if (this.$route.path == '/question') {
+        this.activiteIndex = 2
+      } else if (this.$route.path == '/practice') {
+        this.activiteIndex = 3
+      } else if (this.$route.path == '/statistics') {
+        this.activiteIndex = 4
+      } else if (this.$route.path == '/exportpdf') {
+        this.activiteIndex = 6
+      }
+    },
     clickNav(n, index) {
       this.activiteIndex = index
       if (n.link) {
@@ -108,7 +147,7 @@ export default {
     .acvite{
       background-color: #FF5A00;
     }
-    .sidebar_list{
+    .sidebar_list{ 
       display: flex;
       justify-content: flex-start;
       align-items: center;

@@ -46,15 +46,49 @@
     </div>
   </div>
   <div class="recommend">
-    <div>
-      
+    <!-- 周导出排行榜 -->
+    <div class="recom_list"> 
+      <h1 class="title">Wekly Prediction Exam Questions Download</h1>
+      <ul class="list">
+        <li class="item" v-for="(n, index) in 9" :key="index">
+          <p class="data">16/05/2020 Update</p>
+          <p class="btn">Download</p>
+        </li>
+      </ul>
+      <pagination v-show="true" :total="1000" :page.sync="params.page" :limit.sync="params.size" @pagination="getList" style="text-align:center"/>
+    </div>
+    <!-- 下载模板 -->
+    <div class="recom_list"> 
+      <h1 class="title">Pte Template Download</h1>
+      <ul class="list">
+        <li class="item">
+          <p class="data">Describel Image</p>
+          <p class="btn">Download</p>
+        </li>
+        <li class="item">
+          <p class="data">Retell Lecture</p>
+          <p class="btn">Download</p>
+        </li>
+        <li class="item">
+          <p class="data">SWT</p>
+          <p class="btn">Download</p>
+        </li>
+        <li class="item">
+          <p class="data">Easy</p>
+          <p class="btn">Download</p>
+        </li>
+        <li class="item">
+          <p class="data">SST</p>
+          <p class="btn">Download</p>
+        </li>
+      </ul>
     </div>
   </div>
 </div>
-
 </template>
 
 <script>
+import pagination from '../../components/pagination';
 export default {
   data() {
     return {
@@ -63,6 +97,18 @@ export default {
       arr1: ['ALL', 'SWT', 'WE'],
       arr2: ['ALL', 'RMCS', 'RMCM', 'RO', 'RFIB', 'FIBW'],
       arr3: ['ALL', 'SST', 'MCM', 'FIB', 'HCS', 'MCS', 'SMW', 'HIW', 'WFD'],
+      params: {
+        page: 1,
+        size: 10
+      }
+    }
+  },
+  components: {
+    pagination
+  },
+  methods: {
+    getList() {
+
     }
   }
 }
@@ -184,6 +230,53 @@ export default {
         }
       }
     }
+  }
+}
+.recommend{
+  display: flex;
+  width: 100%;
+  .recom_list{
+    padding: 24px 29px;
+    border-radius: 4px;
+    background-color: #fff;
+    margin-right: 24px;
+    flex-grow: 1;
+    width: 50%;
+    .title{
+      border-bottom: 1px solid #DFDFDF;
+      padding-bottom: 15px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #222941;
+    }
+    .list{
+      padding-top: 16px;
+      .item{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+        padding-top: 0;
+        color: #222941;
+        font-size: 16px;
+        .data{
+          color: #222941;
+        }
+        .btn{
+          width:112px;
+          height:40px;
+          background:rgba(77,208,225,1);
+          border-radius:3px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: #fff;
+        }
+      }
+    }
+  }
+  .recom_list:nth-last-child(1) {
+    margin-right: 0;
   }
 }
 </style>
