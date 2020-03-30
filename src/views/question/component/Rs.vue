@@ -37,70 +37,70 @@ export default {
 
 <style lang="less" scoped>
 .item{
-  padding: 15px 20px;
+  padding: 30px 35px;
   .top{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
     .left{
       display: flex;
       .name{
-        font-size:11px;
+        font-size:18px;
         font-weight:bold;
         color:rgba(34,41,65,1);
-        padding-right: 12px;
+        padding-right: 25px;
       }
       .tag{
         display: inline-block;
-        padding: 0 4px;
-        height: 20px;
+        padding: 0 6px;
+        height: 35px;
         margin-right: 10px;
         color: #ffffff;
-        font-size: 9px;
+        font-size: 14px;
         border-radius: 3px;
-        line-height: 20px;
+        line-height: 35px;
       }
     }
     .right{
       display: flex;
       .color{
-        width:56px;
-        height:20px;
-        background:#CCCCCC;
+        width:74px;
+        height:32px;
+        background:rgba(77,208,225,1);
         border-radius:3px;
-        font-size:9px;
+        font-size:14px;
         color:rgba(255,255,255,1);
-        margin-right: 10px;
-        line-height: 20px;
+        margin-right: 16px;
+        line-height: 35px;
         text-align: center;
       }
       .img{
         width:14px;
-        height:20px;
+        height:35px;
       }
     }
   }
   .des{
-    font-size:11px;
+    font-size:18px;
     color:rgba(34,41,65,1);
     text-align: justify;
-    line-height: 17px;
-    margin-bottom: 15px;
+    line-height: 27px;
+    margin-bottom: 30px;
   }
   .btn_box{
     display: flex;
     flex-direction: row-reverse;
     .btn{
-      height: 25px;
-      padding: 0 12px;
+      height: 40px;
+      padding: 0 25px;
       color: #ffffff;
-      font-size: 10px;
+      font-size: 16px;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-right: 10px;
-      border-radius: 3px;
+      margin-right: 16px;
+      border-radius: 4px;
     }
     .btn:nth-of-type(1){
       margin-right: 0;
