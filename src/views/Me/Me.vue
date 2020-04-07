@@ -1,8 +1,19 @@
 <template>
   <div class="me">
     <Head></Head>
+    <img v-if="!drawer" @click="drawer = true" class="btn" src="../../../src/assets/image/left.png" alt="">
+    <el-drawer
+      title="我是标题"
+      :visible.sync="drawer"
+      :size="drawerPrams.size"
+      :wrapperClosable="drawer.wrapperClosable"
+      :direction="drawerPrams.direction"
+      :before-close="handleClose">
+      <div class="drawer_box">
+        <img v-if="drawer" @click="drawer = false" class="close_btn" src="../../../src/assets/image/right.png" alt="">
+      </div>
+    </el-drawer>
     <div class="me_main">
-      <!-- <div style="width: 20%;margin-right: 15px;"> -->
       <div style="margin-right: 15px; flex-shrink: 0;">
         <SideBar></SideBar>
       </div>
@@ -60,7 +71,13 @@ import Head from '../../components/Head'
 export default {
   data () {
     return {
-      isShow: true
+      isShow: false,
+      drawer:false,
+      drawerPrams: {
+        direction: 'rtl',
+        wrapperClosable: false,
+        size: '80%'
+      }
     }
   },
   components: { Head, SideBar, Footer },
@@ -72,6 +89,16 @@ export default {
         this.isShow = false
       }
     }
+  },
+  methods: {
+    handleClose(down) {
+      this.$confirm('确认关闭？')
+      .then(_ => {
+        this.drawer = false
+        done()
+      })
+      .catch(_ => {});
+    }
   }
 }
 </script>
@@ -82,6 +109,25 @@ export default {
     min-height: 100vh;
     background: #F2F7F8;
     border: 0.1px solid rgba(0,0,0,0);
+    position: relative;
+    .drawer_box{
+      position: relative;
+      width: 100%;
+      .close_btn{
+        width: 39px;
+        position: fixed;
+        left: calc(20% - 28px);
+        top: 50%;
+        transform:translateY(-50%);
+      }
+    }
+    .btn{
+      position: fixed;
+      width: 39px;
+      right: -10px;
+      top: 50%;
+      transform:translateY(-50%);
+    }
     .me_main{
       display: flex;
       justify-content: space-between;

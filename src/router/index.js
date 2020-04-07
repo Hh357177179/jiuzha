@@ -45,6 +45,11 @@ const routes = [
             path: '/exportpdf',
             name: 'exportpdf',
             component: () => import ('../views/exportpdf/exportpdf')
+          },
+          {
+            path: '/reading',
+            name: 'reading',
+            component: () => import ('../views/reading/reading.vue')
           }
         ]
       }

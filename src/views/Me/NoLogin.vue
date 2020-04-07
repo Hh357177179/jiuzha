@@ -207,7 +207,8 @@ export default {
         { icon: 'facebook', url: '' },
         { icon: 'email', url: '' },
         { icon: 'backTop', url: '' }
-      ]
+      ],
+      drawer: true
     };
   },
   created () {
