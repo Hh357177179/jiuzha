@@ -23,9 +23,24 @@
         Every morning, no matter how late he had been up, my father rose at five-thirty.
       </div>
       <div class="content">
-          no matter how late he had been up, my father rose at five-thirty, went to his study, wrote for a couple of hours, made us all breakfast, read the paper with my mother, and then went back to work for the rest of the morning. Many years passed before I realized that he did this for a living.Every morning, no matter how late he had been up, my father rose at five-thirty, went to his study, wrote for a couple of hours, made us all breakfast, read the paper with my mother, and then went back to work for the rest of the morning. Many years passed before I realized that he did.time
+        no matter how late he had been up, my father rose at five-thirty, went to his study, wrote for a couple of hours, made us all breakfast, read the paper with my mother, and then went back to work for the rest of the morning. Many years passed before I realized that he did this for a living.Every morning, no matter how late he had been up, my father rose at five-thirty, went to his study, wrote for a couple of hours, made us all breakfast, read the paper with my mother, and then went back to work for the rest of the morning. Many years passed before I realized that he did.time
       </div>
-      
+      <div class="progress">
+        <div class="active"></div>
+        <p class="time">00:36</p>
+      </div>
+      <div class="btn_box">
+        <div class="btn">
+          <div class="btn_item">Feedback</div>
+          <div class="btn_item">Answer</div>
+        </div>
+        <div class="btn">
+          <div class="btn_item">Try Again</div>
+          <div class="btn_item">Previous</div>
+          <div class="btn_item">Next</div>
+          <div class="btn_item" style="background-color:#CCCCCC;">Save</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -136,6 +151,48 @@ export default {
       line-height: 160%;
       margin-bottom: 330px;
     }
+    .progress{
+      width: 90%;
+      height: 20px;
+      background-color: #CCCCCC;
+      position: relative;
+      margin-bottom: 40px;
+      .active{
+        position: absolute;
+        left: 0;
+        top: -2px;
+        width: 413px;
+        height: 24px;
+        background-color: #4DD0E1;
+        border-radius: 2px;
+      }
+      .time{
+        position: absolute;
+        left: 103%;
+        font-size: 18px;
+        color: #222941;
+      }
+    }
+    .btn_box{
+      display: flex;
+      justify-content: space-between;
+      .btn{
+        display: flex;
+        .btn_item{
+          width:120px;
+          height:40px;
+          background:rgba(77,208,225,1);
+          border-radius:4px;
+          font-size: 16px;
+          color: #FFFFFF;
+          margin-left: 16px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+    }
+
   }
 }
 </style>

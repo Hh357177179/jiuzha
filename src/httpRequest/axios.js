@@ -18,11 +18,12 @@ api.interceptors.request.use(
 // 响应拦截
 api.interceptors.response.use(
   res => {
+    console.log(res)
     if (res.data.code) {
       if (res.data.code == 200) {
         return res.data.data;
       } 
-      else console.log('错误提示');
+      else app.$message.error(res.data.msg);
     } 
     else  return Promise.resolve(res.data);
   },
