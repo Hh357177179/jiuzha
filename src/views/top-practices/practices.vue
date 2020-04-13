@@ -3,7 +3,8 @@
     <nav class="top">
       <div v-for="(n, index) in tag1List" :key="index" class="item" @click="navClick(index)" :class="activeIndex == index ? 'active' : ''">{{n}}</div>
     </nav>
-    <div class="tag_box">
+    <board></board>
+    <!-- <div class="tag_box">
       <div class="title">1.Language appeared nowhere</div>
       <div class="tag" style="background-color:#536DFE">FIBW 1/2033</div>
       <div class="tag" style="background-color:#786BF0">Highly Repeated</div>
@@ -38,11 +39,12 @@
           <div class="btn_item" style="background-color:#CCCCCC;">Save</div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
+import board from './compontent/board'
 export default {
   data () {
     return {
@@ -50,6 +52,9 @@ export default {
       activeIndex: ''
     }
   }, 
+  components: {
+    board
+  },
   methods: {
     navClick(index) {
       this.activeIndex = index
