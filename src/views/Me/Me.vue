@@ -83,7 +83,7 @@ export default {
   components: { Head, SideBar, Footer },
   watch: {
     $route(to,from){
-      if (to.path == '/home' || to.path == '/statistics' || to.path == '/exportpdf') {
+      if (to.path == '/home' || to.path == '/statistics' || to.path == '/exportpdf' || to.path == '/frequent') {
         this.isShow = true
       } else {
         this.isShow = false

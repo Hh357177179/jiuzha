@@ -59,7 +59,7 @@ export default {
           logo: require('../assets/image/sidebar/high.png'),
           activeLogo: require('../assets/image/sidebar/higha.png'),
           text: 'Frequent Words',
-          link: ''
+          link: '/frequent'
         },
         {
           logo: require('../assets/image/sidebar/circle.png'),
@@ -71,7 +71,7 @@ export default {
           logo: require('../assets/image/sidebar/us.png'),
           activeLogo: require('../assets/image/sidebar/usa.png'),
           text: 'About Us',
-          link: ''
+          link: '/about-us'
         },
         {
           logo: require('../assets/image/sidebar/share.png'),
@@ -102,6 +102,9 @@ export default {
         case '/exportpdf':
           this.activiteIndex = 6
           break
+        case '/about-us':
+          this.activiteIndex = 9
+          break
       }
     }
   },
@@ -120,6 +123,8 @@ export default {
         this.activiteIndex = 4
       } else if (this.$route.path == '/exportpdf') {
         this.activiteIndex = 6
+      } else if (this.$route.path == '/about-us') {
+        this.activiteIndex = 9
       }
     },
     clickNav(n, index) {

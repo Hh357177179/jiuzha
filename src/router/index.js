@@ -47,6 +47,11 @@ const routes = [
             component: () => import ('../views/exportpdf/exportpdf')
           },
           {
+            path: '/frequent',
+            name: 'frequent',
+            component: () => import ('../views/FrequentWords/words.vue')
+          },
+          {
             path: '/reading',
             name: 'reading',
             component: () => import ('../views/reading/reading.vue')
@@ -55,6 +60,11 @@ const routes = [
             path: '/practices',
             name: 'practices',
             component: () => import ("../views/top-practices/practices.vue")
+          },
+          {
+            path: '/about-us',
+            name: 'aboutUs',
+            component: () => import ("../views/aboutUs/about-us.vue")
           }
         ]
       }
